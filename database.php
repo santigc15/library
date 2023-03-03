@@ -49,7 +49,7 @@ class Database
     {
         $this->dbh = $dbh;
         $this->datos = $datos;
-               
+
         try {
             $stmt = $dbh->prepare("INSERT INTO usuarios (nombre, apellidos, dni, email, contrasena) VALUES (:nombre, :apellidos, :dni, :email, :contrasena)");
             $stmt->bindParam(':nombre', $this->nombre);
@@ -58,18 +58,46 @@ class Database
             $stmt->bindParam(':email', $this->email);
             $stmt->bindParam(':contrasena', $this->contrasena);
 
-            $this->nombre=$this->datos['nombre'];
-            $this->apellidos=$this->datos['apellidos'];
-            $this->dni=$this->datos['dni'];
-            $this->email=$this->datos['email'];
-            $this->contrasena=$this->datos['contrasena'];
+            $this->nombre = $this->datos['nombre'];
+            $this->apellidos = $this->datos['apellidos'];
+            $this->dni = $this->datos['dni'];
+            $this->email = $this->datos['email'];
+            $this->contrasena = $this->datos['contrasena'];
 
 
             // Ejecutar la consulta
             $stmt->execute();
-            
         } catch (PDOException $e) {
             echo "Error al insertar datos: " . $e->getMessage();
         }
+    }
+
+
+
+
+    public function compruebaUser($dbh, $usuario, $contrasena)
+    {
+
+        // Consulta preparada para verificar si el usuario existe en la base de datos
+        $sql = "SELECT * FROM usuarios WHERE email = :usuario";
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute(['usuario' => $usuario]);
+
+        // Verificar si se encontró el usuario en la base de datos
+        if ($stmt->rowCount() == 0) {
+            echo "El usuario ".$usuario." no existe en la base de datos.";
+            die();
+        }
+
+        $usuario = $stmt->fetch();
+
+
+
+        if ($contrasena == $usuario['contrasena']) {
+            echo "Inicio de sesión exitoso para el usuario ". $usuario['email'];
+        } else {
+            echo "La contraseña es incorrecta.";
+        }
+
     }
 }
