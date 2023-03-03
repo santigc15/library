@@ -17,7 +17,7 @@ class Database
 
 
     public $nombre;
-    public $surname;
+    public $apellidos;
     public $dni;
     public $email;
     public $contrasena;
@@ -51,15 +51,15 @@ class Database
         $this->datos = $datos;
                
         try {
-            $stmt = $dbh->prepare("INSERT INTO usuarios (nombre, surname, dni, email, contrasena) VALUES (:nombre, :surname, :dni, :email, :contrasena)");
+            $stmt = $dbh->prepare("INSERT INTO usuarios (nombre, apellidos, dni, email, contrasena) VALUES (:nombre, :apellidos, :dni, :email, :contrasena)");
             $stmt->bindParam(':nombre', $this->nombre);
-            $stmt->bindParam(':surname', $this->surname);
+            $stmt->bindParam(':apellidos', $this->apellidos);
             $stmt->bindParam(':dni', $this->dni);
             $stmt->bindParam(':email', $this->email);
             $stmt->bindParam(':contrasena', $this->contrasena);
 
             $this->nombre=$this->datos['nombre'];
-            $this->surname=$this->datos['surname'];
+            $this->apellidos=$this->datos['apellidos'];
             $this->dni=$this->datos['dni'];
             $this->email=$this->datos['email'];
             $this->contrasena=$this->datos['contrasena'];

@@ -6,11 +6,11 @@ if (isset($_POST['register'])) {
 
             $datos = array();
 
-            $datos["nombre"] = $_POST['name'];
-            $datos["surname"] = $_POST['surname'];
+            $datos["nombre"] = $_POST['nombre'];
+            $datos["apellidos"] = $_POST['apellidos'];
             $datos["dni"] = $_POST['dni'];
             $datos["email"] = $_POST['email'];
-            $datos["contrasena"] = $_POST['password'];
+            $datos["contrasena"] = $_POST['contrasena'];
   $database =new Database();
   $dbh = $database->dbh;
 

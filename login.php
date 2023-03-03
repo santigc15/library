@@ -4,10 +4,10 @@
 <div class="form-container">
       <form action="#" method="post">
         <label for="user">Usuario:</label>
-        <input type="text" name="user" required placeholder="Introduzca su usuario...">
+        <input type="text" name="email" required placeholder="Introduzca su email...">
         <label for="password">Contraseña:</label>
-        <input type="password" name="password" required placeholder="Introduzca su contraseña..."> 
-        <input type="submit" value="Registrar">
+        <input type="password" name="contrasena" required placeholder="Introduzca su contraseña..."> 
+        <input type="submit" value="Login">
       </form>
     </div>
 
