@@ -2,7 +2,7 @@
 
 
 <div class="form-container">
-      <form action="conectado.php" method="post">
+      <form action="valida.php" method="post">
         <label for="user">Usuario:</label>
         <input type="text" name="email" required placeholder="Introduzca su email...">
         <label for="password">Contraseña:</label>

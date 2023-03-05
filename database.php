@@ -91,14 +91,20 @@ class Database
 
         $usuario = $stmt->fetch();
 
-        
+
 
         if (password_verify($contrasena, $usuario['contrasena'])) {
-            echo "Inicio de sesión exitoso para el usuario ". $usuario['email'];
+            
+            $nombre_sesion = $usuario['email'];
+            session_name($nombre_sesion);
+            session_start();
+            return $nombre_sesion;
         } else {
             echo "Usuario o contraseña incorrectas";
+            die();
         }
-
     }
 }
+
 ?>
+
