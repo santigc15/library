@@ -10,10 +10,9 @@ if (isset($_POST["login"])) {
     $database = new Database();
     $dbh = $database->dbh;
 
-    $database->compruebaUser($dbh, $usuario, $contrasena);
+    $nombre=$database->compruebaUser($dbh, $usuario, $contrasena);
+    header("Location:main.php");
 
-
-   
 } else {
     require_once("login.php");
 }
