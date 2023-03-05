@@ -10,7 +10,7 @@ if (isset($_POST['register'])) {
     $datos["apellidos"] = $_POST['apellidos'];
     $datos["dni"] = $_POST['dni'];
     $datos["email"] = $_POST['email'];
-    $datos["contrasena"] = $_POST['contrasena'];
+    $datos["contrasena"] = password_hash($_POST['contrasena'], PASSWORD_DEFAULT);
     $database = new Database();
     $dbh = $database->dbh;
 

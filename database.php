@@ -85,19 +85,20 @@ class Database
 
         // Verificar si se encontró el usuario en la base de datos
         if ($stmt->rowCount() == 0) {
-            echo "El usuario ".$usuario." no existe en la base de datos.";
+            echo "Usuario o contraseña incorrectas";
             die();
         }
 
         $usuario = $stmt->fetch();
 
+        
 
-
-        if ($contrasena == $usuario['contrasena']) {
+        if (password_verify($contrasena, $usuario['contrasena'])) {
             echo "Inicio de sesión exitoso para el usuario ". $usuario['email'];
         } else {
-            echo "La contraseña es incorrecta.";
+            echo "Usuario o contraseña incorrectas";
         }
 
     }
 }
+?>
