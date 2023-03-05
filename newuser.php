@@ -19,3 +19,4 @@ if (isset($_POST['register'])) {
 } else {
     require_once("register.php");
 }
+?>
