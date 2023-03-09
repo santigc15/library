@@ -1,0 +1,47 @@
+.file-card {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ddd;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  padding: 10px;
+  flex-basis: calc(50% - 20px);
+  box-sizing: border-box;
+}
+
+.file-card:hover {
+  background-color: #f5f5f5;
+}
+
+.file-link {
+  color: #588554;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.file-size, .file-modified {
+  color: #666;
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+  .file-card {
+    flex-basis: 100%;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .file-card {
+    flex-basis: calc(50% - 20px);
+  }
+}
+
+.file-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.file-name {
+  white-space: nowrap; /* Evita que el nombre del archivo se divida en varias líneas */
+  overflow: hidden; /* Oculta el contenido que no cabe en la ficha */
+  text-overflow: ellipsis; /* Agrega elipsis al final del texto que no cabe */
+}
