@@ -26,7 +26,7 @@
 			$size = filesize($dir . "/" . $file);
 			$mod_time = date("Y-m-d H:i:s", filemtime($dir . "/" . $file));
 			echo "<div class=\"file-card\">";
-			echo "<a href=\"$file\" class=\"file-link file-name\">$file</a>";
+			echo "<div class=\"file-name\"><a href=\"$file\" class=\"file-link enlace\">$file</a></div>";
 			echo "<div class=\"file-size\">$size bytes</div>";
 			echo "<div class=\"file-modified\">Última modificación: $mod_time</div>";
 			echo "</div>";
