@@ -6,6 +6,7 @@
 body {
     width: 65%;
     margin: 0 auto;
+
 }
 
 
@@ -14,6 +15,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 10px;
 }
 .header-container a{
 text-decoration: none;
@@ -43,6 +45,7 @@ text-decoration: none;
     .header-container {
         flex-direction: column;
         align-items: center;
+        margin-bottom: 10px;
     }
 
     .buttons-container {
