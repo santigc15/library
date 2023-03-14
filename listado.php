@@ -17,7 +17,7 @@
 
 
 
-<div class="file-container">
+<div class="grid">
 <?php
 	$dir = "./files/";
 	$files = scandir($dir);
@@ -34,6 +34,9 @@
 	}
 ?>
 </div>
+
+
+
 
 
 

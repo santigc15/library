@@ -1,0 +1,9 @@
+.grid {
+    display: grid;
+    grid-template-columns: 300px 300px;
+    width: 700px;
+    margin-left: 15%;
+}
+.file-card{
+    height: 150px;
+}
