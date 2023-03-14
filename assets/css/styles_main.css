@@ -1,9 +1,19 @@
 .grid {
     display: grid;
-    grid-template-columns: 300px 300px;
+    grid-template-columns: 1fr 1fr;
     width: 700px;
     margin-left: 15%;
+    grid-gap: 20px;
+
 }
-.file-card{
-    height: 150px;
+
+.file-card {
+    height: 100px;
+    border: 1px solid blue;
+    background-color: rgba(152, 233, 145, 0.4);
+    border-radius: 15px;
+    padding: 1rem;
+    font-family: arial;
+    color: white;
+    text-align: center;
 }
